@@ -1,0 +1,19 @@
+# Use postgres/example user/password credentials
+version: "3.1"
+
+services:
+  db:
+    image: postgres:11-alpine
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: docker
+      POSTGRES_DB: nodetdd
+
+  adminer:
+    image: adminer:4.7.1
+    restart: always
+    ports:
+      - 8080:8080
